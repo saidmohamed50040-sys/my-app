@@ -35,6 +35,3 @@ android.api = 31
 
 # (int) Minimum API required
 android.minapi = 21
-
-# (int) Android SDK version to use
-android.sdk = 31
