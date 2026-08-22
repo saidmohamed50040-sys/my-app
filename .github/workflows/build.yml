@@ -14,9 +14,8 @@ jobs:
 
     - name: Build with Buildozer
       uses: docker://kivy/buildozer:latest
-      options: --user root
       with:
-        args: sh -c "yes | buildozer -v android debug"
+        args: sh -c "export BUILDOZER_ALLOW_KIVY_BUILD_FROM_ROOT=1 && yes | buildozer -v android debug"
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
