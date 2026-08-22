@@ -16,7 +16,8 @@ jobs:
       uses: docker://kivy/buildozer:latest
       with:
         entrypoint: /bin/bash
-        args: -c "echo 'y' | buildozer -v android debug"
+        # هنا بنجبر السيرفر يوافق على رخص الـ SDK أوتوماتيك قبل البناء
+        args: -c "mkdir -p ~/.android && touch ~/.android/repositories.cfg && yes | buildozer -v android debug"
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
