@@ -10,12 +10,14 @@ jobs:
 
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v5
+      uses: actions/checkout@v4
 
     - name: Build with Buildozer Docker
       uses: docker://kivy/buildozer:latest
+      options: --user root
       with:
-        args: buildozer -v android debug
+        # هنا بنجبر السيرفر يجاوب بـ yes تلقائياً على أي سؤال من الـ buildozer
+        args: sh -c "yes | buildozer -v android debug"
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
