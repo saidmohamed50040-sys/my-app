@@ -32,10 +32,10 @@ fullscreen = 1
 android.permissions = INTERNET
 
 # (int) Android API to target
-android.api = 33
+android.api = 31
 
 # (int) Minimum API required
 android.minapi = 21
 
 # (int) Android SDK version to use
-android.sdk = 33
+android.sdk = 31
