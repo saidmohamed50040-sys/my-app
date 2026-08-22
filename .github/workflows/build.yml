@@ -16,7 +16,6 @@ jobs:
       uses: docker://kivy/buildozer:latest
       options: --user root
       with:
-        # هنا بنجبر السيرفر يجاوب بـ yes تلقائياً على أي سؤال من الـ buildozer
         args: sh -c "yes | buildozer -v android debug"
 
     - name: Upload APK
